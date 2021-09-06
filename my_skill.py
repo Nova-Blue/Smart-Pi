@@ -5,6 +5,7 @@ import requests
 import socket
 from WOL import WOLClient
 from RokuTV import RokuClient
+import RSDRemoteClient
 
 from flask import Flask
 from flask_ask import Ask, request, session, question, statement
@@ -37,6 +38,13 @@ def tv_night():
 def wake_pc():
     wol.wake()
     speech_text = 'Okay, PC turning on'
+    return statement(speech_text)
+
+
+@ask.intent('ShutdownPCIntent')
+def shutdown_pc():
+    RSDRemoteClient.shutdown()
+    speech_text = 'Done, PC is shutting down now'
     return statement(speech_text)
 
 
