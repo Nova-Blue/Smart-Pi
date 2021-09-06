@@ -5,7 +5,7 @@ Smart Pi is an Alexa skill developed in Python, and designed to run on my Raspbe
 
 ## Video Demo
 
-
+Comming soon
 
 
 
